@@ -1,6 +1,6 @@
 import ProductListSec from '@/components/common/product-list-sec'
-import Header from '@/components/product-page/Header'
-import Tabs from '@/components/product-page/Tabs'
+import Header from '@/components/product-page/header'
+import Tabs from '@/components/product-page/tabs'
 import { TOP_SELLING_DATA } from '@/constants'
 import { Product } from '@/types'
 import { notFound } from 'next/navigation'

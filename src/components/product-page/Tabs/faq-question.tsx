@@ -44,10 +44,10 @@ const faqsData: FaqItem[] = [
   },
 ]
 
-const FaqContent = () => {
+const FaqQuestion = () => {
   return (
     <section>
-      <h3 className='text-xl sm:text-2xl font-bold text-black mb-5 sm:mb-6'>
+      <h3 className='text-xl sm:text-2xl font-bold text-black mb-5 sm:mb-6 dark:text-white'>
         Frequently asked questions
       </h3>
       <Accordion type='single' collapsible>
@@ -64,4 +64,4 @@ const FaqContent = () => {
   )
 }
 
-export default FaqContent
+export default FaqQuestion

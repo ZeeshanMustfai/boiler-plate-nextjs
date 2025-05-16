@@ -1,3 +1,4 @@
+'use client'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import React from 'react'
@@ -5,6 +6,9 @@ import { NavMenu } from '../navbar.types'
 import Image from 'next/image'
 import MobileNavBar from './mobile-nav-bar'
 import CartBtn from './cart-btn'
+import { useTheme } from '@/context/theme-context'
+import { FiMoon, FiSun } from 'react-icons/fi'
+import { FiShoppingCart, FiUser } from 'react-icons/fi'
 
 const data: NavMenu = [
   {
@@ -62,30 +66,44 @@ const data: NavMenu = [
 ]
 
 const TopNavbar = () => {
+  const { theme, toggleTheme } = useTheme()
   return (
-    <nav className='sticky top-0 bg-white z-20'>
+    <nav className='sticky top-0 bg-white  dark:bg-black z-20'>
       <div className='flex relative max-w-7xl mx-auto items-center !justify-between md:justify-start py-5 md:py-6 px-4 xl:px-0'>
         <div className='flex items-center'>
           <div className='block md:hidden mr-4'>
             <MobileNavBar data={data} />
           </div>
-          <Link href='/' className={cn(['text-2xl lg:text-[32px] font-bold '])}>
+          <Link
+            href='/'
+            className={cn([
+              'text-2xl lg:text-[32px] font-bold dark:text-white ',
+            ])}
+          >
             MUSTFAI
           </Link>
         </div>
 
-        <div className='flex items-center'>
+        <div className='flex items-center space-x-2'>
           <CartBtn />
-          <Link href='/#signin' className='p-1'>
-            <Image
-              priority
-              src='/icons/user.svg'
-              height={100}
-              width={100}
-              alt='user'
-              className='max-w-[22px] max-h-[22px]'
-            />
-          </Link>
+
+          <button className='p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white'>
+            <FiUser className='w-5 h-5' />
+          </button>
+          <button
+            onClick={toggleTheme}
+            className='p-2 rounded bg-gray-200 cursor-pointer  dark:bg-gray-700 text-black dark:text-white flex items-center gap-2'
+          >
+            {theme === 'light' ? (
+              <>
+                <FiMoon className='w-5 h-5' />
+              </>
+            ) : (
+              <>
+                <FiSun className='w-5 h-5' />
+              </>
+            )}
+          </button>
         </div>
       </div>
     </nav>

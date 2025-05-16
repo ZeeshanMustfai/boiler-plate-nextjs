@@ -3,8 +3,8 @@
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
-import ProductDetailsContent from './product-detail-content'
-import FaqContent from './faq-question'
+import ProductDetailsContent from './product-details-content'
+import FaqQuestion from './faq-question'
 
 type TabBtn = {
   id: number
@@ -36,8 +36,8 @@ const Tabs = () => {
             type='button'
             className={cn([
               active === tab.id
-                ? 'border-black border-b-2 font-medium'
-                : 'border-b border-black/10 text-black/60 font-normal',
+                ? 'border-black border-b-2 font-medium dark:border-white'
+                : 'border-b border-black/10 text-black/60 font-normal dark:text-white/60',
               'p-5 sm:p-6 rounded-none flex-1',
             ])}
             onClick={() => setActive(tab.id)}
@@ -48,7 +48,7 @@ const Tabs = () => {
       </div>
       <div className='mb-12 sm:mb-16'>
         {active === 1 && <ProductDetailsContent />}
-        {active === 3 && <FaqContent />}
+        {active === 3 && <FaqQuestion />}
       </div>
     </div>
   )

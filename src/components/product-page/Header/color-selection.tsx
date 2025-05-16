@@ -15,7 +15,7 @@ const ColorSelection = () => {
   const dispatch = useAppDispatch()
   return (
     <div className='flex flex-col'>
-      <span className='text-sm sm:text-base text-black/60 mb-4'>
+      <span className='text-sm sm:text-base text-black/60 mb-4 dark:text-white'>
         Select Colors
       </span>
       <div className='flex items-center space-x-3 flex-wrap'>

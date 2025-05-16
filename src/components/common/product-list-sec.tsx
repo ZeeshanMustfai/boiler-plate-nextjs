@@ -54,10 +54,10 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
           </CarouselContent>
         </Carousel>
         {viewAllLink && (
-          <div className='w-full px-4 sm:px-0 text-center'>
+          <div className='w-full px-4 sm:px-0 text-center  '>
             <Link
               href={'#'}
-              className='w-full inline-block sm:w-[218px] px-[54px] py-4 border rounded-full hover:bg-black hover:text-white text-black transition-all font-medium text-sm sm:text-base border-black/10'
+              className='w-full inline-block sm:w-[218px] px-[54px] dark:text-white dark:bg-gray-900 py-4 border rounded-full hover:bg-black hover:text-white text-black transition-all font-medium text-sm sm:text-base border-black/10'
             >
               View All
             </Link>

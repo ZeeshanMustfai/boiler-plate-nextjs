@@ -40,7 +40,7 @@ const CartItemCard = ({ data }: CartItemProps) => {
         <div className='flex items-center justify-between'>
           <Link
             href={`/shop/product/${data.id}/${data.name.split(' ').join('-')}`}
-            className='text-black font-bold text-base xl:text-xl'
+            className='text-black font-bold text-base xl:text-xl dark:text-white'
           >
             {data.name}
           </Link>
@@ -61,52 +61,56 @@ const CartItemCard = ({ data }: CartItemProps) => {
             <PiTrashFill className='text-xl md:text-2xl text-red-600' />
           </Button>
         </div>
-        <div className='-mt-1'>
-          <span className='text-black text-xs md:text-sm mr-1'>Size:</span>
-          <span className='text-black/60 text-xs md:text-sm'>
+        <div className='-mt-1 dark:text-white'>
+          <span className='text-black text-xs md:text-sm mr-1 dark:text-white'>
+            Size:
+          </span>
+          <span className='text-black/60 text-xs md:text-sm dark:text-white'>
             {data.attributes[0]}
           </span>
         </div>
-        <div className='mb-auto -mt-1.5'>
-          <span className='text-black text-xs md:text-sm mr-1'>Color:</span>
-          <span className='text-black/60 text-xs md:text-sm'>
+        <div className='mb-auto -mt-1.5 dark:text-white'>
+          <span className='text-black text-xs md:text-sm mr-1 dark:text-white'>
+            Color:
+          </span>
+          <span className='text-black/60 text-xs md:text-sm dark:text-white'>
             {data.attributes[1]}
           </span>
         </div>
         <div className='flex items-center flex-wrap justify-between'>
-          <div className='flex items-center space-x-[5px] xl:space-x-2.5'>
+          <div className='flex items-center space-x-[5px] xl:space-x-2.5 dark:text-white'>
             {data.discount.percentage > 0 ? (
-              <span className='font-bold text-black text-xl xl:text-2xl'>
+              <span className='font-bold text-black text-xl xl:text-2xl dark:text-white'>
                 {`$${Math.round(
                   data.price - (data.price * data.discount.percentage) / 100
                 )}`}
               </span>
             ) : data.discount.amount > 0 ? (
-              <span className='font-bold text-black text-xl xl:text-2xl'>
+              <span className='font-bold text-black text-xl xl:text-2xl dark:text-white'>
                 {`$${data.price - data.discount.amount}`}
               </span>
             ) : (
-              <span className='font-bold text-black text-xl xl:text-2xl'>
+              <span className='font-bold text-black text-xl xl:text-2xl dark:text-white'>
                 ${data.price}
               </span>
             )}
             {data.discount.percentage > 0 && (
-              <span className='font-bold text-black/40 line-through text-xl xl:text-2xl'>
+              <span className='font-bold text-black/40 line-through text-xl xl:text-2xl dark:text-white'>
                 ${data.price}
               </span>
             )}
             {data.discount.amount > 0 && (
-              <span className='font-bold text-black/40 line-through text-xl xl:text-2xl'>
+              <span className='font-bold text-black/40 line-through text-xl xl:text-2xl dark:text-white'>
                 ${data.price}
               </span>
             )}
             {data.discount.percentage > 0 ? (
-              <span className='font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]'>
+              <span className='font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333] dark:text-white'>
                 {`-${data.discount.percentage}%`}
               </span>
             ) : (
               data.discount.amount > 0 && (
-                <span className='font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]'>
+                <span className='font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333] dark:text-white'>
                   {`-$${data.discount.amount}`}
                 </span>
               )

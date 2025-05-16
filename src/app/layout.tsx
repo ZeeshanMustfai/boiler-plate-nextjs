@@ -9,6 +9,7 @@ import ReactQueryProvider from '@/api/provider'
 import { StoreProvider } from '../zustand/store-provider'
 import ReduxProvider from '@/components/providers/redux-provider'
 import TopNavbar from '@/components/nav-bar/top-nav-bar'
+import { ThemeProvider } from '@/context/theme-context'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,9 +36,11 @@ export default function RootLayout({
         <StoreProvider isAuthenticated={false} accessToken='' user={null}>
           <ReduxProvider>
             <ReactQueryProvider>
-              <TopNavbar />
-              <hr className='w-full h-[2px] border-t-black/10 mb-2 md:mb-4' />
-              {children}
+              <ThemeProvider>
+                <TopNavbar />
+                <hr className='w-full h-[2px] border-t-black/10 mb-2 md:mb-4' />
+                {children}
+              </ThemeProvider>
               <ToastContainer position='top-center' />
             </ReactQueryProvider>
           </ReduxProvider>
