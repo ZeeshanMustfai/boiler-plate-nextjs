@@ -8,14 +8,15 @@ import 'react-toastify/dist/ReactToastify.css'
 import ReactQueryProvider from '@/api/provider'
 import { StoreProvider } from '../zustand/store-provider'
 import ReduxProvider from '@/components/providers/redux-provider'
+import TopNavbar from '@/components/nav-bar/top-nav-bar'
 
 const inter = Inter({
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: `Meals Planner`,
-  description: `Plan meals for your loved ones.`,
+  title: `Mustfai Shop`,
+  description: `Mustfai shop for your loved ones.`,
 }
 
 export default function RootLayout({
@@ -25,10 +26,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body
+        className={inter.className}
+        data-new-gr-c-s-check-loaded='14.1235.0'
+        data-gr-ext-installed=''
+        cz-shortcut-listen='true'
+      >
         <StoreProvider isAuthenticated={false} accessToken='' user={null}>
           <ReduxProvider>
             <ReactQueryProvider>
+              <TopNavbar />
+              <hr className='w-full h-[2px] border-t-black/10 mb-2 md:mb-4' />
               {children}
               <ToastContainer position='top-center' />
             </ReactQueryProvider>

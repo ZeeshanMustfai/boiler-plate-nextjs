@@ -14,11 +14,11 @@ import {
 import { useAppDispatch } from '@/lib/hooks/redux'
 import CartCounter from '../ui/cart-counter'
 
-type ProductCardProps = {
+type CartItemProps = {
   data: CartItem
 }
 
-const ProductCard = ({ data }: ProductCardProps) => {
+const CartItemCard = ({ data }: CartItemProps) => {
   const dispatch = useAppDispatch()
 
   return (
@@ -137,4 +137,4 @@ const ProductCard = ({ data }: ProductCardProps) => {
   )
 }
 
-export default ProductCard
+export default CartItemCard

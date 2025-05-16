@@ -3,8 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 import { NavMenu } from '../navbar.types'
 import Image from 'next/image'
-import ResTopNavbar from './ResTopNavbar'
-import CartBtn from './CartBtn'
+import MobileNavBar from './mobile-nav-bar'
+import CartBtn from './cart-btn'
 
 const data: NavMenu = [
   {
@@ -67,7 +67,7 @@ const TopNavbar = () => {
       <div className='flex relative max-w-7xl mx-auto items-center !justify-between md:justify-start py-5 md:py-6 px-4 xl:px-0'>
         <div className='flex items-center'>
           <div className='block md:hidden mr-4'>
-            <ResTopNavbar data={data} />
+            <MobileNavBar data={data} />
           </div>
           <Link href='/' className={cn(['text-2xl lg:text-[32px] font-bold '])}>
             MUSTFAI

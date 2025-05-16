@@ -7,8 +7,7 @@ import React from 'react'
 import { RootState } from '@/lib/store'
 import { useAppSelector } from '@/lib/hooks/redux'
 import Link from 'next/link'
-import TopNavbar from '@/components/Navbar/TopNavbar'
-import ProductCard from '@/components/common/ProductCard'
+import ProductCard from '@/components/common/cart-item-card'
 
 export default function CartPage() {
   const { cart, totalPrice, adjustedTotalPrice } = useAppSelector(
@@ -107,7 +106,7 @@ export default function CartPage() {
             <TbBasketExclamation strokeWidth={1} className='text-6xl' />
             <span className='block mb-4'>Your shopping cart is empty.</span>
             <Button className='rounded-full w-24' asChild>
-              <Link href='/shop'>Shop</Link>
+              <Link href='/'>Shop</Link>
             </Button>
           </div>
         )}

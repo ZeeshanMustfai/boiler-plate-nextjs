@@ -1,9 +1,9 @@
 import React from 'react'
-import PhotoSection from './PhotoSection'
+import PhotoSection from './photo-section'
 import { cn } from '@/lib/utils'
-import ColorSelection from './ColorSelection'
-import SizeSelection from './SizeSelection'
-import AddToCardSection from './AddToCardSection'
+import ColorSelection from './color-selection'
+import SizeSelection from './size-section'
+import AddToCardSection from './add-to-cart-section'
 import { Product } from '@/types'
 import { Rating } from '../../ui/rating'
 

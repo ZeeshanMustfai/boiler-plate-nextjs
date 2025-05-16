@@ -2,7 +2,7 @@
 
 import CartCounter from '@/components/ui/cart-counter'
 import React, { useState } from 'react'
-import AddToCartBtn from './AddToCartBtn'
+import AddToCartBtn from './add-to-card-btn'
 import { Product } from '@/types'
 
 const AddToCardSection = ({ data }: { data: Product }) => {
